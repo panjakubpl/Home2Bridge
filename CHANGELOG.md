@@ -5,7 +5,29 @@ All notable changes to Home2Bridge will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-01-05
+## [1.1.0] - 2026-01-05
+
+### Added
+- **Notifications System** — Get notified about important Homebridge events:
+  - Plugin updates available (click to open Plugins window)
+  - Homebridge update available
+  - Homebridge UI update available
+  - Node.js update available
+  - Homebridge down/unresponsive
+  - High CPU usage (>80%)
+  - Low memory (<20% free)
+- **Notifications Settings Tab** — Configure which notifications you want to receive
+- Notification cooldown (5 minutes) to prevent spam
+- Authorization status display in Settings
+
+### Improved
+- Settings window layout and sizing
+- Visual alignment of toggle switches
+- App icon display in About tab
+
+---
+
+## [1.0.0] - 2026-01-04
 
 ### Added
 - Initial release
@@ -36,4 +58,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[1.1.0]: https://github.com/panjakubpl/Home2Bridge/releases/tag/v1.1.0
 [1.0.0]: https://github.com/panjakubpl/Home2Bridge/releases/tag/v1.0.0

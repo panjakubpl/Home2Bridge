@@ -44,6 +44,18 @@ Home2Bridge brings your [Homebridge](https://homebridge.io) server status direct
 - Restart host system
 - Shutdown host system
 
+### Notifications
+Get notified about important events:
+- **Plugin Updates** — When plugin updates are available (click to open Plugins window)
+- **Homebridge Updates** — New Homebridge version available
+- **Homebridge UI Updates** — New UI version available
+- **Node.js Updates** — New Node.js version available
+- **Homebridge Down** — When Homebridge stops responding
+- **High CPU Usage** — When CPU exceeds 80%
+- **Low Memory** — When available memory drops below 20%
+
+All notifications are configurable in Settings → Notifications tab.
+
 ### Additional Features
 - **Logs Viewer** — Browse Homebridge logs directly
 - **Config Viewer** — View your config.json
