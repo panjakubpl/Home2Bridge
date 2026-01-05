@@ -34,9 +34,13 @@ Home2Bridge brings your [Homebridge](https://homebridge.io) server status direct
 - **Homebridge Status** — Running, stopped, or error state at a glance
 
 ### Plugin Management
-- View all installed plugins
-- See available updates count
-- Quick access to plugin list
+- View all installed plugins with version info
+- See available updates count in the menu bar
+- **Update individual plugins** — One-click update for any plugin
+- **Update all plugins at once** — Batch update when multiple updates available
+- **Progress tracking** — Visual feedback showing which plugin is being updated
+- **Automatic refresh** — Data refreshes automatically after Homebridge restarts
+- Quick links to plugin homepages
 
 ### Server Control
 - Restart Homebridge service
