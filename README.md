@@ -34,13 +34,9 @@ Home2Bridge brings your [Homebridge](https://homebridge.io) server status direct
 - **Homebridge Status** — Running, stopped, or error state at a glance
 
 ### Plugin Management
-- View all installed plugins with version info
-- See available updates count in the menu bar
-- **Update individual plugins** — One-click update for any plugin
-- **Update all plugins at once** — Batch update when multiple updates available
-- **Progress tracking** — Visual feedback showing which plugin is being updated
-- **Automatic refresh** — Data refreshes automatically after Homebridge restarts
-- Quick links to plugin homepages
+- View all installed plugins
+- See available updates count
+- Quick access to plugin list
 
 ### Server Control
 - Restart Homebridge service
@@ -48,24 +44,13 @@ Home2Bridge brings your [Homebridge](https://homebridge.io) server status direct
 - Restart host system
 - Shutdown host system
 
-### Notifications
-Get notified about important events:
-- **Plugin Updates** — When plugin updates are available (click to open Plugins window)
-- **Homebridge Updates** — New Homebridge version available
-- **Homebridge UI Updates** — New UI version available
-- **Node.js Updates** — New Node.js version available
-- **Homebridge Down** — When Homebridge stops responding
-- **High CPU Usage** — When CPU exceeds 80%
-- **Low Memory** — When available memory drops below 20%
-
-All notifications are configurable in Settings → Notifications tab.
-
 ### Additional Features
 - **Logs Viewer** — Browse Homebridge logs directly
 - **Config Viewer** — View your config.json
 - **System Info** — Server hostname, OS, architecture, IP addresses
 - **Pairing Info** — HomeKit PIN and pairing status
 - **Auto-refresh** — Configurable refresh interval (5s, 15s, 30s, 60s)
+- **Auto-reconnect** — Automatically reconnects after Mac wakes from sleep
 - **Launch at Login** — Start automatically with your Mac
 - **Temperature Units** — Celsius or Fahrenheit
 
