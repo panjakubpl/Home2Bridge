@@ -2,61 +2,60 @@
 
 All notable changes to Home2Bridge will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [1.4.0] - 2026-03-19
+
+### Fixed
+- **Plugin update timeout** — Plugin updates now use a dedicated 5-minute timeout session instead of the default 10 seconds. npm install on Raspberry Pi can take 30–300 seconds, causing all updates to silently fail with a timeout error.
+- **Plugin update URL with trailing slash** — If the server URL was entered with a trailing slash (e.g. `http://rpi4.local:8581/`), the update request URL contained a double slash (`//api/...`) causing a 404. Fixed by using proper URL path building.
+- **Refresh interval not applied immediately** — Changing the refresh interval in Settings now takes effect immediately without requiring a reconnect.
+- **Launch at Login toggle infinite loop** — Fixed a potential loop where a failed SMAppService registration/unregistration would repeatedly toggle the setting.
+
+### Changed
+- Plugin update requests now use a separate URL session with extended timeouts, keeping regular API calls fast (10s) while allowing plugin installs to complete.
+
+## [1.3.0] - 2026-01-10
+
+### Added
+- **Auto-Reconnect After Sleep** — App now automatically reconnects to Homebridge when Mac wakes from sleep
+- **Update Checker Restart** — Periodic update check timer restarts automatically after wake
+- **Secure Auto-Updates** — Ed25519 signature verification for update packages; SHA-256 hash verification for downloaded DMGs
+
+### Fixed
+- App failed to reconnect after Mac sleep/wake cycle
+- Update checker timer stopped working after sleep
+
+## [1.2.0] - 2026-01-05
+
+### Added
+- **Plugin Update Functionality** - Update individual plugins or all plugins at once directly from the app
+- **Update Progress Tracking** - Visual feedback showing which plugin is being updated
+- **Restart Wait Logic** - App waits for Homebridge restart after plugin updates and refreshes data automatically
+- **Server Status Protection** - Update buttons are disabled when Homebridge server is down
+
+### Changed
+- Improved status detection using `isRunning` property (handles both "up" and "ok" status)
+- Enhanced connectivity verification after server restart
+- Better error handling for plugin update failures
+
+### Fixed
+- Fixed "Waiting for restart..." getting stuck when server was already up
+- Fixed dashboard not refreshing after plugin updates
 
 ## [1.1.0] - 2026-01-05
 
 ### Added
-- **Notifications System** — Get notified about important Homebridge events:
-  - Plugin updates available (click to open Plugins window)
-  - Homebridge update available
-  - Homebridge UI update available
-  - Node.js update available
-  - Homebridge down/unresponsive
-  - High CPU usage (>80%)
-  - Low memory (<20% free)
-- **Notifications Settings Tab** — Configure which notifications you want to receive
-- Notification cooldown (5 minutes) to prevent spam
-- Authorization status display in Settings
+- Initial plugin management view with list of installed plugins
+- Plugin sorting (updates first, then alphabetical)
+- Plugin homepage links
+- Disabled plugin indicators
 
-### Improved
-- Settings window layout and sizing
-- Visual alignment of toggle switches
-- App icon display in About tab
-
----
-
-## [1.0.0] - 2026-01-04
+## [1.0.0] - 2026-01-05
 
 ### Added
 - Initial release
-- Menu bar CPU usage display
-- Real-time Homebridge status monitoring
-- CPU, RAM, and uptime statistics
-- Plugin list with update notifications
-- Server control (restart Homebridge, restart service, restart/shutdown host)
-- Logs viewer
-- Config viewer (read-only)
-- System information display
-- Pairing info with HomeKit PIN
-- Settings panel with:
-  - Server connection configuration
-  - 2FA support
-  - Configurable refresh interval (5s, 15s, 30s, 60s)
-  - Temperature unit toggle (Celsius/Fahrenheit)
-  - Launch at login option
-  - Automatic update checks
+- Menu bar app with Homebridge status monitoring
+- Connection settings with server URL, username, and password
+- Dashboard overview showing server status, uptime, CPU, and memory
+- Auto-refresh every 30 seconds
 - Secure credential storage in macOS Keychain
-- Ed25519 signature verification for updates
-- Universal Binary (Apple Silicon + Intel)
-
-### Security
-- Credentials stored in macOS Keychain
-- HTTPS support for server connections
-- Cryptographic signature verification for updates
-
----
-
-[1.1.0]: https://github.com/panjakubpl/Home2Bridge/releases/tag/v1.1.0
-[1.0.0]: https://github.com/panjakubpl/Home2Bridge/releases/tag/v1.0.0
+- Automatic update checking with signed releases
